@@ -1,0 +1,260 @@
+{
+  "info": {
+    "name": "Geospatial Analysis API",
+    "description": "REST API for geospatial analysis and hotspot detection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Regions",
+      "item": [
+        {
+          "name": "Get All Regions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/regions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "regions"]
+            }
+          }
+        },
+        {
+          "name": "Get Region by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/regions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "regions", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Region",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"New Region\",\n  \"latitude\": 37.7749,\n  \"longitude\": -122.4194,\n  \"description\": \"A new geographic region\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/regions",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "regions"]
+            }
+          }
+        },
+        {
+          "name": "Update Region",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Updated Region\",\n  \"latitude\": 37.7749,\n  \"longitude\": -122.4194,\n  \"description\": \"Updated description\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/regions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "regions", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Region",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/regions/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "regions", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Signals",
+      "item": [
+        {
+          "name": "Get All Signals",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/signals",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals"]
+            }
+          }
+        },
+        {
+          "name": "Get Signals by Region",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/signals?regionId=1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals"],
+              "query": [
+                {
+                  "key": "regionId",
+                  "value": "1"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Signal by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/signals/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Signal",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"regionId\": 1,\n  \"indicatorType\": \"POPULATION_GROWTH\",\n  \"score\": 85.5,\n  \"description\": \"Annual population growth rate\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/signals",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals"]
+            }
+          }
+        },
+        {
+          "name": "Update Signal",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"regionId\": 1,\n  \"indicatorType\": \"POPULATION_GROWTH\",\n  \"score\": 90.0,\n  \"description\": \"Updated growth rate\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/signals/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Signal",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/signals/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "signals", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Hotspots",
+      "item": [
+        {
+          "name": "Get Top Hotspots",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/hotspots?limit=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "hotspots"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Top 5 Hotspots",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/hotspots?limit=5",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "hotspots"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "5"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

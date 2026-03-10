@@ -1,0 +1,47 @@
+.
+|____PROJECT_SUMMARY.md
+|____ARCHITECTURE.md
+|____PROJECT_TREE.txt
+|____SETUP.md
+|____Geospatial-API.postman_collection.json
+|____QUICKSTART.md
+|____pom.xml
+|____README.md
+|____.gitignore
+|____INDEX.md
+|____mvnw
+|____test-api.sh
+|____src
+| |____main
+| | |____resources
+| | | |____application.properties
+| | |____java
+| | | |____com
+| | | | |____geospatial
+| | | | | |____dto
+| | | | | | |____HotspotResponse.java
+| | | | | | |____ApiResponse.java
+| | | | | | |____SignalRequest.java
+| | | | | | |____SignalResponse.java
+| | | | | | |____RegionResponse.java
+| | | | | | |____RegionRequest.java
+| | | | | |____repository
+| | | | | | |____SignalRepository.java
+| | | | | | |____RegionRepository.java
+| | | | | |____GeospatialAnalysisApplication.java
+| | | | | |____config
+| | | | | | |____DataInitializer.java
+| | | | | |____entity
+| | | | | | |____Region.java
+| | | | | | |____Signal.java
+| | | | | |____controller
+| | | | | | |____SignalController.java
+| | | | | | |____RegionController.java
+| | | | | | |____HotspotController.java
+| | | | | |____service
+| | | | | | |____SignalService.java
+| | | | | | |____RegionService.java
+| | | | | |____exception
+| | | | | | |____ResourceNotFoundException.java
+| | | | | | |____DuplicateResourceException.java
+| | | | | | |____GlobalExceptionHandler.java
