@@ -1,6 +1,6 @@
 # Geospatial Analysis Service - REST API
 🎥 **Watch here:**  
-<iframe width="560" height="315" src="https://www.youtube.com/embed/N86pguovKHA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=N86pguovKHA
 
 A Spring Boot REST API for geospatial analysis that stores and analyzes geographic regions with growth indicators.
 
